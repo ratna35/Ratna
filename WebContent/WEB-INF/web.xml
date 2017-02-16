@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<context-param>
+		<param-name>aa</param-name>
+		<param-value> 70 </param-value>
+	</context-param>
+	<context-param>
+		<param-name>bb</param-name>
+		<param-value> 68 </param-value>
+	</context-param>
+	<context-param>
+		<param-name>cc</param-name>
+		<param-value> 98 </param-value>
+	</context-param>
+	<context-param>
+		<param-name>dd</param-name>
+		<param-value> 95 </param-value>
+	</context-param>
+	
+	<display-name>DemoServlets</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		
+<!-- 
+		<welcome-file>sampleDoGetDetails.jsp</welcome-file>
+		<welcome-file>indexServletClass.jsp</welcome-file>
+		<welcome-file>servletContecDemo.jsp</welcome-file>
+
+
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+ -->	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>dopostDemo</servlet-name>
+		<servlet-class>com.demo.servlets.SimpleDoPostExample</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dopostDemo</servlet-name>
+		<url-pattern>/dopostDemo.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>dogetDemo</servlet-name>
+		<servlet-class>com.demo.servlets.SimpleDoGetExample</servlet-class>
+		<init-param>
+			<param-name>Ece</param-name>
+			<param-value>20 students</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Cse</param-name>
+			<param-value>40 students</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dogetDemo</servlet-name>
+		<url-pattern>/dogetDemo.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- Configuration servlet for call from the client -->
+	<servlet>
+		<servlet-name>servletClass</servlet-name>
+		<servlet-class>com.demo.servlets.servletClass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servletClass</servlet-name>
+		<url-pattern>/servletClass.do</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>servletConfigDemo</servlet-name>
+		<servlet-class>com.demo.servlets.ServletContextDemo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>servletConfigDemo</servlet-name>
+		<url-pattern>/servletConfigDemo.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Servlet1</servlet-name>
+		<servlet-class>com.demo.servlets.FirstServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Servlet2</servlet-name>
+		<servlet-class>com.demo.servlets.SecondServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Servlet1</servlet-name>
+		<url-pattern>/servlet1.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Servlet2</servlet-name>
+		<url-pattern>/servlet2.do</url-pattern>
+	</servlet-mapping>
+</web-app>
